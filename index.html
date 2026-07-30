@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather and Climate: Corvallis Temperature Data</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Garden Climate Learning Activity</p>
+      <h1>Weather and Climate: What Does the Corvallis Graph Show?</h1>
+      <p class="lede">
+        Explore annual temperature data from the Corvallis State University
+        weather station.
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <section class="panel" aria-labelledby="goal-heading">
+      <h2 id="goal-heading">Learning goal</h2>
+      <p>
+        Explain how temperatures can vary from year to year while still showing
+        a long-term climate pattern.
+      </p>
+    </section>
+
+    <!-- HOW-TO VIDEO: Replace only the src value below to use a different video. -->
+    <section class="panel" aria-labelledby="video-heading">
+      <h2 id="video-heading">1. Watch: How to explore a weather station</h2>
+
+      <div class="video-wrapper">
+        <iframe
+          src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_ipztpux2&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_zcc22b0e%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D"
+          title="Weather versus climate data: how-to video"
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <p class="help-text">
+        To change the video, replace the web address inside the
+        <code>src="..."</code> attribute in this section of <code>index.html</code>.
+      </p>
+    </section>
+
+    <section class="panel" aria-labelledby="chart-heading">
+      <h2 id="chart-heading">2. Explore annual temperatures</h2>
+
+      <p>
+        The graph loads annual average temperature observations directly from
+        the RCC-ACIS service used by xmACIS for the Corvallis State University
+        station.
+      </p>
+
+      <p id="data-status" class="status" role="status" aria-live="polite">
+        Loading Corvallis temperature data…
+      </p>
+
+      <div id="chart-area" hidden>
+        <div class="chart-wrapper">
+          <canvas
+            id="temperature-chart"
+            role="img"
+            aria-labelledby="chart-heading"
+            aria-describedby="chart-summary">
+            Use the data table below if the chart is unavailable.
+          </canvas>
+        </div>
+
+        <p id="chart-summary">
+          Select or hover over a point to see its year and annual average
+          temperature. The dashed line shows the calculated long-term trend.
+        </p>
+
+        <button
+          type="button"
+          id="toggle-table"
+          class="secondary-button"
+          aria-expanded="false"
+          aria-controls="data-table-wrapper">
+          View data as a table
+        </button>
+
+        <div id="data-table-wrapper" hidden>
+          <table>
+            <caption>
+              Annual average temperature observations for Corvallis State University
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Average temperature</th>
+              </tr>
+            </thead>
+            <tbody id="data-table-body"></tbody>
+          </table>
+        </div>
+
+        <p class="source-note">
+          Source: RCC-ACIS/xmACIS station 351862, Corvallis State University,
+          Oregon. Years with missing annual values are omitted.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel completion" aria-labelledby="completion-heading">
+      <h2 id="completion-heading">Activity complete</h2>
+      <p>
+        Year-to-year changes are weather variability. A pattern across many
+        years helps us understand climate.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Accessible learning activity for Canvas and GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
