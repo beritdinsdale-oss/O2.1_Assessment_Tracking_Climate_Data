@@ -29,10 +29,72 @@
     <h2 id="graph-heading">2. Examine the Corvallis graph</h2>
     <figure>
       <div class="image-placeholder">
-        <img src="assets/corvallis-temperature-graph.png" alt="Long-term annual average temperature graph for a Corvallis, Oregon weather station. Individual yearly values rise and fall, while the overall pattern should be interpreted across many decades." onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
-        <div class="missing-asset" hidden>
-          <p><strong>Graph image not added yet.</strong></p>
-          <p>Save your graph screenshot as <code>assets/corvallis-temperature-graph.png</code>.</p>
+       <div class="interactive-chart" aria-labelledby="chart-heading">
+  <h3 id="chart-heading">Corvallis annual average temperature</h3>
+
+  <p id="chart-instructions" class="chart-instructions">
+    Explore the graph by moving your pointer across the data points.
+    You can also use the controls and accessible data table below.
+  </p>
+
+  <div class="chart-controls" aria-label="Chart display controls">
+    <label>
+      <input type="checkbox" id="show-yearly-values" checked>
+      Show annual values
+    </label>
+
+    <label>
+      <input type="checkbox" id="show-trend-line" checked>
+      Show long-term trend
+    </label>
+  </div>
+
+  <div class="chart-wrapper">
+    <canvas
+      id="temperature-chart"
+      role="img"
+      aria-labelledby="chart-heading chart-description"
+      aria-describedby="chart-instructions">
+    </canvas>
+  </div>
+
+  <p id="chart-description" class="chart-summary">
+    The graph shows annual average temperatures for Corvallis.
+    Temperatures vary from year to year, but the long-term trend rises
+    across the period shown.
+  </p>
+
+  <button
+    type="button"
+    id="toggle-data-table"
+    class="secondary-button"
+    aria-expanded="false"
+    aria-controls="temperature-data-table">
+    View data as a table
+  </button>
+
+  <div id="temperature-data-table" hidden>
+    <table>
+      <caption>
+        Annual average temperature data for Corvallis
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Average temperature</th>
+        </tr>
+      </thead>
+      <tbody id="temperature-table-body"></tbody>
+    </table>
+  </div>
+
+  <noscript>
+    <p>
+      JavaScript is required to display the interactive graph. The same
+      information should also be provided in a downloadable or visible table.
+    </p>
+  </noscript>
+</div>
         </div>
       </div>
       <figcaption>Each point or bar represents the average temperature for one year. The year-to-year highs and lows show variability; the broader pattern across many years describes climate.</figcaption>
@@ -102,6 +164,7 @@
   </section>
 </main>
 <footer><div class="wrap"><p>Designed as a keyboard-accessible, screen-reader-friendly learning activity for use in Canvas or GitHub Pages.</p></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
