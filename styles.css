@@ -1,1 +1,112 @@
 :root{--bg:#f5f7f3;--surface:#fff;--text:#1f2a24;--muted:#506057;--border:#c8d1cb;--accent:#235f42;--accent-dark:#16452f;--accent-light:#e7f2eb;--correct:#176b3a;--incorrect:#9b2c2c;--focus:#f0b429;--max:900px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}img,video{max-width:100%}.wrap{width:min(calc(100% - 2rem),var(--max));margin-inline:auto}.skip-link{position:absolute;left:1rem;top:-4rem;background:#000;color:#fff;padding:.75rem 1rem;z-index:1000}.skip-link:focus{top:1rem}.site-header{background:var(--accent);color:#fff;padding:2.75rem 0 2.25rem}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin:0 0 .4rem}h1,h2,h3{line-height:1.2}h1{margin:0;font-size:clamp(2rem,5vw,3.25rem)}.lede{max-width:48rem;font-size:1.15rem;margin-bottom:0}main{padding-block:2rem}.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:clamp(1.1rem,3vw,2rem);margin-bottom:1.5rem}.panel h2:first-child{margin-top:0}.video-shell{background:#111;border-radius:8px;overflow:hidden}.video-shell video{width:100%;display:block}.help-text,figcaption{color:var(--muted);font-size:.95rem}details{border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem}summary{cursor:pointer;font-weight:700}.transcript{margin-top:1rem}.image-placeholder img{display:block;width:100%;border:1px solid var(--border);border-radius:8px}.missing-asset{border:2px dashed var(--border);border-radius:8px;padding:2rem;text-align:center;background:#fafafa}.concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.5rem}.concept-grid article{border-left:5px solid var(--accent);background:var(--accent-light);padding:1rem}.question{border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin:1.25rem 0}.question legend{font-weight:700;padding:0 .25rem}.q-number{color:var(--accent-dark)}.question label{display:block;padding:.7rem;margin:.4rem 0;border-radius:6px}.question label:hover{background:#f3f5f3}input[type=radio]{margin-right:.6rem;transform:scale(1.15)}button,.button-link{display:inline-block;border:0;border-radius:6px;padding:.75rem 1rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}.check-answer,.button-link{background:var(--accent);color:#fff;margin-top:.75rem}.check-answer:hover,.button-link:hover{background:var(--accent-dark)}.secondary-button{background:#e9ece9;color:var(--text);border:1px solid var(--border)}.feedback{margin-top:.8rem;padding:.85rem;border-radius:6px;min-height:1.5rem}.feedback.correct{background:#e8f6ed;border-left:5px solid var(--correct)}.feedback.incorrect{background:#faeaea;border-left:5px solid var(--incorrect)}.progress{background:var(--accent-light);border-left:5px solid var(--accent);padding:1rem;font-weight:700}.prompt-box{margin-top:1.5rem;padding:1rem 1.25rem;background:#f6f8f5;border:1px solid var(--border);border-radius:8px}.completion{text-align:center}footer{background:#26362d;color:#fff;padding:1.5rem 0}:focus-visible{outline:4px solid var(--focus);outline-offset:3px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eef0ee;padding:.15rem .3rem;border-radius:3px}@media(max-width:650px){.concept-grid{grid-template-columns:1fr}.site-header{padding-top:2rem}}
+/* Interactive temperature chart */
+
+.interactive-chart {
+  margin-block: 1.5rem;
+}
+
+.chart-instructions,
+.chart-summary {
+  max-width: 70ch;
+}
+
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-block: 1rem;
+  padding: 1rem;
+  border: 1px solid #b8c2b8;
+  border-radius: 0.5rem;
+  background: #f5f8f5;
+}
+
+.chart-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.chart-controls input {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 28rem;
+  margin-block: 1rem;
+}
+
+.secondary-button {
+  display: inline-block;
+  margin-block: 1rem;
+  padding: 0.7rem 1rem;
+  border: 2px solid currentColor;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background: #eef4ee;
+}
+
+.secondary-button:focus-visible,
+.chart-controls input:focus-visible {
+  outline: 3px solid #1c6b45;
+  outline-offset: 3px;
+}
+
+#temperature-data-table {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+#temperature-data-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#temperature-data-table caption {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+#temperature-data-table th,
+#temperature-data-table td {
+  padding: 0.65rem;
+  border: 1px solid #8c978c;
+  text-align: left;
+}
+
+#temperature-data-table thead {
+  background: #edf3ed;
+}
+
+@media (max-width: 600px) {
+  .chart-wrapper {
+    height: 22rem;
+  }
+
+  .chart-controls {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-chart *,
+  .interactive-chart *::before,
+  .interactive-chart *::after {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
