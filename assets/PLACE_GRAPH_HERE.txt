@@ -1,1 +1,0 @@
-Rename your graph image to corvallis-temperature-graph.png and place it in this folder.

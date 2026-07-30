@@ -1,7 +1,0 @@
-SAMPLE TRANSCRIPT — REPLACE WITH YOUR FINAL VIDEO TRANSCRIPT
-
-In this activity, you will use real weather-station data to compare short-term weather variability with a long-term climate pattern.
-
-Begin by opening xmACIS. Choose a single-station seasonal time series, search for a station near your community, select average temperature and an annual time period, and generate the graph.
-
-Notice that the graph rises and falls from year to year. These changes represent natural weather variability. To study climate, step back and examine the pattern across many decades rather than focusing on one year.
