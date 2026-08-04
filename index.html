@@ -3,280 +3,173 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Weather and Climate: Corvallis Temperature Data</title>
+  <title>Reading a Long-Term Oregon Climate Trend</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <p class="eyebrow">Garden Climate Learning Activity</p>
-      <h1>Weather and Climate: What Does the Corvallis Graph Show?</h1>
-      <p class="lede">
-        Learn how to read a weather-station graph, practice distinguishing weather
-        from climate, and then explore a station yourself.
-      </p>
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">Garden Climate Learning Activity</p>
+    <h1>What Does the Corvallis Temperature Graph Show?</h1>
+    <p class="lede">
+      Examine a long-term temperature record and identify a climate trend
+      relevant to Oregon gardeners.
+    </p>
+  </div>
+</header>
+
+<main id="main" class="wrap" tabindex="-1">
+  <section class="panel" aria-labelledby="goal-heading">
+    <h2 id="goal-heading">Learning goal</h2>
+    <p>
+      By the end of this activity, you will be able to identify a major
+      climate trend using climate data relevant to Oregon gardeners.
+    </p>
+  </section>
+
+  <section class="panel" aria-labelledby="video-heading">
+    <h2 id="video-heading">1. Watch: How to explore a weather station</h2>
+    <iframe
+      id="kaltura_player"
+      src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_ipztpux2&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_zcc22b0e%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D"
+      style="width: 400px; height: 225px; border: 0;"
+      allowfullscreen
+      webkitallowfullscreen
+      mozallowfullscreen
+      allow="autoplay *; fullscreen *; encrypted-media *"
+      sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+      title="How to explore climate data using xmACIS">
+    </iframe>
+  </section>
+
+  <section class="interactive-chart" aria-labelledby="chart-heading">
+    <h2 id="chart-heading">2. Examine the graph</h2>
+    <h3>Corvallis annual average temperature</h3>
+
+    <p id="chart-instructions">
+      Move your pointer over the graph to explore individual years.
+      Compare the annual values with the long-term trend line.
+      The same values are available in the data table below.
+    </p>
+
+    <div class="chart-wrapper">
+      <canvas
+        id="temperature-chart"
+        role="img"
+        aria-labelledby="chart-heading chart-description"
+        aria-describedby="chart-instructions">
+      </canvas>
     </div>
-  </header>
 
-  <main id="main" class="wrap" tabindex="-1">
-    <section class="panel" aria-labelledby="goal-heading">
-      <h2 id="goal-heading">Learning goal</h2>
-      <p>
-        Explain how temperatures can vary from year to year while still showing
-        a long-term climate pattern.
-      </p>
-    </section>
+    <p id="chart-description">
+      Annual average temperatures vary from year to year, while the
+      long-term trend line shows the overall direction of change.
+    </p>
 
-    <!-- STEP 1 VIDEO: Replace only the src value below to use a different video. -->
-    <section class="panel" aria-labelledby="video-heading">
-      <h2 id="video-heading">1. Watch: How to explore a weather station</h2>
+    <button
+      type="button"
+      id="toggle-data-table"
+      class="secondary-button"
+      aria-expanded="false"
+      aria-controls="temperature-data-table">
+      View data as a table
+    </button>
 
-      <p>
-        Watch the demonstration. You will use the same process yourself in Step 3.
-      </p>
-
-      <div class="video-wrapper">
-        <iframe
-          src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_ipztpux2&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_zcc22b0e%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D"
-          title="Weather versus climate data: how-to video"
-          allow="autoplay *; fullscreen *; encrypted-media *"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
-    </section>
-
-    <section class="panel" aria-labelledby="chart-heading">
-      <h2 id="chart-heading">2. Practice with the Corvallis graph</h2>
-
-      <p>
-        The graph loads annual average temperature observations from the
-        Corvallis State University weather station. Hover over or select points
-        to examine individual years.
-      </p>
-
-      <p id="data-status" class="status" role="status" aria-live="polite">
-        Loading Corvallis temperature data…
-      </p>
-
-      <div id="chart-area" hidden>
-        <div class="chart-wrapper">
-          <canvas
-            id="temperature-chart"
-            role="img"
-            aria-labelledby="chart-heading"
-            aria-describedby="chart-summary">
-            Use the data table below if the chart is unavailable.
-          </canvas>
-        </div>
-
-        <p id="chart-summary">
-          The solid line shows annual values. The dashed line summarizes the
-          long-term trend.
-        </p>
-
-        <button
-          type="button"
-          id="toggle-table"
-          class="secondary-button"
-          aria-expanded="false"
-          aria-controls="data-table-wrapper">
-          View data as a table
-        </button>
-
-        <div id="data-table-wrapper" hidden>
-          <table>
-            <caption>
-              Annual average temperature observations for Corvallis State University
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Year</th>
-                <th scope="col">Average temperature</th>
-              </tr>
-            </thead>
-            <tbody id="data-table-body"></tbody>
-          </table>
-        </div>
-
-        <p class="source-note">
-          Source: RCC-ACIS/xmACIS station 351862, Corvallis State University,
-          Oregon. Years with missing annual values are omitted.
-        </p>
-      </div>
-
-      <form id="quiz" class="quiz" novalidate>
-        <h3 id="questions-heading" tabindex="-1">Weather or climate?</h3>
-        <p>
-          Use the graph to answer each question. Select an answer, then choose
-          <strong>Check answer</strong>.
-        </p>
-
-        <p id="progress" class="progress" aria-live="polite">
-          0 of 4 questions answered correctly.
-        </p>
-
-        <fieldset class="question" data-correct="weather">
-          <legend>
-            <span class="q-number">Question 1.</span>
-            The temperature changes from one individual year to the next. What
-            does this show?
-          </legend>
-          <label>
-            <input type="radio" name="q1" value="weather">
-            Short-term weather variability
-          </label>
-          <label>
-            <input type="radio" name="q1" value="climate">
-            A completely different climate every year
-          </label>
-          <button type="button" class="check-answer">Check answer</button>
-          <p class="feedback" aria-live="polite"></p>
-        </fieldset>
-
-        <fieldset class="question" data-correct="no">
-          <legend>
-            <span class="q-number">Question 2.</span>
-            One year is cooler than the year before it. Does that single year
-            prove that the climate is cooling?
-          </legend>
-          <label>
-            <input type="radio" name="q2" value="yes">
-            Yes
-          </label>
-          <label>
-            <input type="radio" name="q2" value="no">
-            No
-          </label>
-          <button type="button" class="check-answer">Check answer</button>
-          <p class="feedback" aria-live="polite"></p>
-        </fieldset>
-
-        <fieldset class="question" data-correct="many">
-          <legend>
-            <span class="q-number">Question 3.</span>
-            Which part of the graph is most useful for identifying a climate pattern?
-          </legend>
-          <label>
-            <input type="radio" name="q3" value="one">
-            One individual year
-          </label>
-          <label>
-            <input type="radio" name="q3" value="two">
-            Two neighboring years
-          </label>
-          <label>
-            <input type="radio" name="q3" value="many">
-            The pattern across many years or decades
-          </label>
-          <button type="button" class="check-answer">Check answer</button>
-          <p class="feedback" aria-live="polite"></p>
-        </fieldset>
-
-        <fieldset class="question" data-correct="long-term">
-          <legend>
-            <span class="q-number">Question 4.</span>
-            A cool year appears near the end of a generally rising trend. Which
-            statement best explains the graph?
-          </legend>
-          <label>
-            <input type="radio" name="q4" value="stopped">
-            The cool year proves that climate change stopped
-          </label>
-          <label>
-            <input type="radio" name="q4" value="long-term">
-            A cool year can occur within a longer-term warming pattern
-          </label>
-          <button type="button" class="check-answer">Check answer</button>
-          <p class="feedback" aria-live="polite"></p>
-        </fieldset>
-
-        <button type="button" id="reset-quiz" class="secondary-button">
-          Reset answers
-        </button>
-      </form>
-    </section>
-
-    <section class="panel" aria-labelledby="try-heading">
-      <h2 id="try-heading">3. Try it yourself with another weather station</h2>
-
-      <p>
-        Now use the process demonstrated in the video to explore a station near
-        you—or another place you are interested in.
-      </p>
-
-      <ol class="steps">
-        <li>
-          Open xmACIS in a new tab.
-        </li>
-        <li>
-          Choose a single-station temperature graph.
-        </li>
-        <li>
-          Search for and select a weather station.
-        </li>
-        <li>
-          Choose a time period that covers many years.
-        </li>
-        <li>
-          Look for short-term ups and downs as well as the longer-term pattern.
-        </li>
-      </ol>
-
-      <p>
-        <a
-          class="button-link"
-          href="https://xmacis.rcc-acis.org/"
-          target="_blank"
-          rel="noopener">
-          Open xmACIS
-          <span class="sr-only">(opens in a new tab)</span>
-        </a>
-      </p>
-
-      <div class="reflection" aria-labelledby="reflection-heading">
-        <h3 id="reflection-heading">What did you notice?</h3>
-
-        <label for="station-name">
-          Station or location you explored
-        </label>
-        <input id="station-name" name="station-name" type="text">
-
-        <label for="weather-observation">
-          Describe one short-term change or unusual year. This is weather variability.
-        </label>
-        <textarea id="weather-observation" name="weather-observation" rows="4"></textarea>
-
-        <label for="climate-observation">
-          Describe the longer-term pattern you see across many years. This is climate.
-        </label>
-        <textarea id="climate-observation" name="climate-observation" rows="4"></textarea>
-
-        <p class="help-text">
-          These notes remain on this page only and are not submitted or saved.
-          Copy them into your course journal or assignment if required.
-        </p>
-      </div>
-    </section>
-
-    <section class="panel completion" aria-labelledby="completion-heading">
-      <h2 id="completion-heading">Activity complete</h2>
-      <p>
-        You watched the process, practiced with Corvallis data, and explored a
-        weather station yourself.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>Accessible learning activity for Canvas and GitHub Pages.</p>
+    <div id="temperature-data-table" hidden>
+      <table>
+        <caption>Annual average temperature data for Corvallis</caption>
+        <thead>
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Average temperature</th>
+          </tr>
+        </thead>
+        <tbody id="temperature-table-body"></tbody>
+      </table>
     </div>
-  </footer>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
-  <script src="app.js"></script>
+  <section class="panel" aria-labelledby="questions-heading">
+    <h2 id="questions-heading" tabindex="-1">3. Interpret the climate trend</h2>
+    <p id="progress" role="status" aria-live="polite">
+      0 of 4 questions answered correctly.
+    </p>
+
+    <form id="quiz">
+      <fieldset class="question" data-correct="a">
+        <legend>
+          1. What long-term temperature trend is most evident in the graph?
+        </legend>
+        <label><input type="radio" name="q1" value="a"> Annual average temperatures generally increase over time.</label>
+        <label><input type="radio" name="q1" value="b"> Annual average temperatures decrease steadily over time.</label>
+        <label><input type="radio" name="q1" value="c"> Temperatures remain unchanged throughout the record.</label>
+        <label><input type="radio" name="q1" value="d"> The graph shows no pattern because individual years differ.</label>
+        <button type="button" class="check-answer">Check answer</button>
+        <p class="feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="question" data-correct="b">
+        <legend>
+          2. Why is the long-term trend line useful when interpreting this graph?
+        </legend>
+        <label><input type="radio" name="q2" value="a"> It predicts the exact temperature for every future year.</label>
+        <label><input type="radio" name="q2" value="b"> It summarizes the overall direction of change despite year-to-year variation.</label>
+        <label><input type="radio" name="q2" value="c"> It removes all unusual years from the climate record.</label>
+        <label><input type="radio" name="q2" value="d"> It proves that every year is warmer than the year before.</label>
+        <button type="button" class="check-answer">Check answer</button>
+        <p class="feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="question" data-correct="c">
+        <legend>
+          3. Which conclusion is best supported by the graph?
+        </legend>
+        <label><input type="radio" name="q3" value="a"> Corvallis will never experience another cool year.</label>
+        <label><input type="radio" name="q3" value="b"> Every temperature difference is caused by climate change.</label>
+        <label><input type="radio" name="q3" value="c"> Corvallis has experienced a long-term warming trend, with variation among individual years.</label>
+        <label><input type="radio" name="q3" value="d"> A single warm year is enough to establish a climate trend.</label>
+        <button type="button" class="check-answer">Check answer</button>
+        <p class="feedback" aria-live="polite"></p>
+      </fieldset>
+
+      <fieldset class="question" data-correct="d">
+        <legend>
+          4. Why might this long-term warming trend matter to Oregon gardeners?
+        </legend>
+        <label><input type="radio" name="q4" value="a"> It guarantees that frost will no longer occur.</label>
+        <label><input type="radio" name="q4" value="b"> It tells gardeners the exact weather on any future planting date.</label>
+        <label><input type="radio" name="q4" value="c"> It means the same gardening changes will be needed in every part of Oregon.</label>
+        <label><input type="radio" name="q4" value="d"> It can influence planting timing, heat stress, irrigation needs, pests, and plant selection.</label>
+        <button type="button" class="check-answer">Check answer</button>
+        <p class="feedback" aria-live="polite"></p>
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="panel completion" aria-labelledby="completion-heading">
+    <h2 id="completion-heading">Activity complete</h2>
+    <p>
+      You have practiced identifying a long-term temperature trend and
+      considering why it matters to Oregon gardeners.
+    </p>
+    <button type="button" id="reset-quiz" class="secondary-button">
+      Reset answers
+    </button>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Designed as a keyboard-accessible, screen-reader-friendly learning
+      activity for use in Canvas or GitHub Pages.
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
