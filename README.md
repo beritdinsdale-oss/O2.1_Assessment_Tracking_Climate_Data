@@ -1,15 +1,23 @@
-# Tracking Climate Data — revision 2
+# Tracking Climate Data — revision 3
 
-Upload these four files directly to the repository root:
+Upload these files directly to the repository root:
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `README.md`
+- index.html
+- styles.css
+- app.js
+- README.md
 
-## Changes
-- Restored the working Kaltura xmACIS tutorial embed from the earlier activity.
-- Changed the video screen heading to **Learn how to look up weather-station data**.
-- Kept the dedicated graph exploration page.
-- Added the Corvallis graph directly above each of the three interpretation questions.
-- Retained the final xmACIS local-station exploration and Garden Journal handoff.
+## Fix in revision 3
+The graph above each interpretation question is now created only when that question
+becomes visible. This avoids Chart.js rendering a zero-size/blank chart inside hidden
+question panels.
+
+The HTML also references `styles.css?v=3` and `app.js?v=3` to reduce stale browser/Canvas
+caching after deployment.
+
+Other retained changes:
+- Working Kaltura xmACIS tutorial embed
+- Video heading: Learn how to look up weather-station data
+- Dedicated Corvallis graph exploration page
+- Final xmACIS local-station exploration
+- Garden Journal handoff
