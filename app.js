@@ -2,6 +2,7 @@ const pages=[...document.querySelectorAll(".page")];
 const steps=[...document.querySelectorAll(".road-step")];
 let current=0;
 let chart;
+let questionCharts=[];
 
 function stopVideo(){
   const frame=document.querySelector("#kalturaFrame");
@@ -106,43 +107,56 @@ async function loadClimateData(){
     const intercept=(sy-slope*sx)/n;
     const trend=x.map(i=>intercept+slope*i);
 
-    const ctx=document.querySelector("#climateChart");
-    chart=new Chart(ctx,{
-      type:"line",
-      data:{
-        labels:rows.map(r=>r.year),
-        datasets:[
-          {
-            label:"Annual average temperature",
-            data:y,
-            borderWidth:2,
-            pointRadius:2,
-            pointHoverRadius:6,
-            tension:.08
-          },
-          {
-            label:"Long-term trend",
-            data:trend,
-            borderWidth:4,
-            pointRadius:0,
-            tension:0
-          }
-        ]
-      },
-      options:{
-        responsive:true,
-        maintainAspectRatio:false,
-        interaction:{mode:"nearest",intersect:false},
-        plugins:{
-          legend:{position:"bottom"},
-          tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${Number(c.raw).toFixed(1)} °F`}}
+    const labels=rows.map(r=>r.year);
+
+    function makeChartConfig(compact=false){
+      return {
+        type:"line",
+        data:{
+          labels,
+          datasets:[
+            {
+              label:"Annual average temperature",
+              data:y,
+              borderWidth:2,
+              pointRadius:compact?1.5:2,
+              pointHoverRadius:5,
+              tension:.08
+            },
+            {
+              label:"Long-term trend",
+              data:trend,
+              borderWidth:compact?3:4,
+              pointRadius:0,
+              tension:0
+            }
+          ]
         },
-        scales:{
-          x:{title:{display:true,text:"Year"},ticks:{maxTicksLimit:10}},
-          y:{title:{display:true,text:"Annual average temperature (°F)"}}
+        options:{
+          responsive:true,
+          maintainAspectRatio:false,
+          interaction:{mode:"nearest",intersect:false},
+          plugins:{
+            legend:{position:"bottom",labels:{boxWidth:compact?16:22}},
+            tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${Number(c.raw).toFixed(1)} °F`}}
+          },
+          scales:{
+            x:{title:{display:true,text:"Year"},ticks:{maxTicksLimit:compact?8:10}},
+            y:{title:{display:true,text:"Annual average temperature (°F)"}}
+          }
         }
-      }
-    });
+      };
+    }
+
+    chart=new Chart(document.querySelector("#climateChart"),makeChartConfig(false));
+
+    questionCharts.forEach(c=>c.destroy());
+    questionCharts=["questionChart0","questionChart1","questionChart2"]
+      .map(id=>{
+        const el=document.getElementById(id);
+        return el ? new Chart(el,makeChartConfig(true)) : null;
+      })
+      .filter(Boolean);
 
     status.textContent=`Loaded ${rows.length} years of annual average temperature data from the Corvallis station.`;
   }catch(error){

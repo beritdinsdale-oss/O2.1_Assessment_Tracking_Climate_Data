@@ -54,15 +54,16 @@
   <div class="card">
     <div class="big-icon" aria-hidden="true">📍</div>
     <p class="kicker">Stop 2</p>
-    <h2>See how a weather station works</h2>
-    <p>Watch the short demonstration. Notice how the station and date range are selected before the graph is interpreted.</p>
+    <h2>Learn how to look up weather-station data</h2>
+    <p>Watch the short demonstration to see how to find a weather station, select a date range, and open a long-term climate record in xmACIS.</p>
 
     <div class="video-wrap">
       <iframe
         id="kalturaFrame"
-        title="How to explore a weather station in xmACIS"
-        src="https://cdnapisec.kaltura.com/p/3912412/embedPlaykitJs/uiconf_id/53610522?iframeembed=true&entry_id=1_y52ddj02"
-        allow="autoplay; fullscreen; encrypted-media"
+        title="How to explore climate data using xmACIS"
+        src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_ipztpux2&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_zcc22b0e%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D"
+        allow="autoplay *; fullscreen *; encrypted-media *"
+        sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
         allowfullscreen>
       </iframe>
     </div>
@@ -120,6 +121,12 @@
 
     <div class="question-card active" data-q="0">
       <span class="question-count">1 of 3</span>
+      <div class="question-graph">
+        <p class="graph-label"><strong>Keep the evidence in view</strong> — Corvallis annual average temperature</p>
+        <div class="mini-chart-shell">
+          <canvas id="questionChart0" aria-label="Corvallis annual average temperature graph for question 1"></canvas>
+        </div>
+      </div>
       <h3>Can a cool year still happen during a long-term warming trend?</h3>
       <div class="answer-grid">
         <button class="answer" data-correct="true">Yes. Individual years can vary even while the long-term pattern warms.</button>
@@ -131,6 +138,12 @@
 
     <div class="question-card" data-q="1">
       <span class="question-count">2 of 3</span>
+      <div class="question-graph">
+        <p class="graph-label"><strong>Keep the evidence in view</strong> — Corvallis annual average temperature</p>
+        <div class="mini-chart-shell">
+          <canvas id="questionChart1" aria-label="Corvallis annual average temperature graph for question 2"></canvas>
+        </div>
+      </div>
       <h3>Why is the long record more useful for understanding climate than one unusually hot year?</h3>
       <div class="answer-grid">
         <button class="answer" data-correct="false">Because the hottest year always tells us what the future climate will be.</button>
@@ -142,6 +155,12 @@
 
     <div class="question-card" data-q="2">
       <span class="question-count">3 of 3</span>
+      <div class="question-graph">
+        <p class="graph-label"><strong>Keep the evidence in view</strong> — Corvallis annual average temperature</p>
+        <div class="mini-chart-shell">
+          <canvas id="questionChart2" aria-label="Corvallis annual average temperature graph for question 3"></canvas>
+        </div>
+      </div>
       <h3>Why might a long-term warming pattern matter to gardeners?</h3>
       <div class="answer-grid">
         <button class="answer" data-correct="true">It can influence heat stress, water demand, seasonal timing, and which plants thrive.</button>
