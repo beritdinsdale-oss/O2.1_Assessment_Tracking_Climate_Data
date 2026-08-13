@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading Climate Stories in Weather Station Data</title>
+  <meta name="description" content="Explore a long-term Corvallis temperature record, interpret climate patterns, and then investigate a weather station near you.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div>
+      <p class="eyebrow">Garden Climate Learning Activity</p>
+      <p class="activity-name">Reading Climate Stories in Data</p>
+    </div>
+    <p id="page-count" class="page-count" aria-live="polite">Stop 1 of 5</p>
+  </div>
+</header>
+
+<nav class="roadmap-wrap" aria-label="Activity progress">
+  <ol class="roadmap wrap">
+    <li><button class="roadmap-step is-current" data-page="0" aria-current="step"><span>1</span><strong>Start</strong></button></li>
+    <li><button class="roadmap-step" data-page="1"><span>2</span><strong>Station</strong></button></li>
+    <li><button class="roadmap-step" data-page="2"><span>3</span><strong>Graph</strong></button></li>
+    <li><button class="roadmap-step" data-page="3"><span>4</span><strong>Pattern</strong></button></li>
+    <li><button class="roadmap-step" data-page="4"><span>5</span><strong>Local</strong></button></li>
+  </ol>
+</nav>
+
+<main id="main" class="wrap" tabindex="-1">
+  <section class="page is-active" data-page="0" aria-labelledby="welcome-title">
+    <div class="hero-card">
+      <div class="hero-copy">
+        <p class="kicker">From one year to many</p>
+        <h1 id="welcome-title">What story can a weather station tell?</h1>
+        <p class="hero-lede">A single year describes weather. A long record can reveal a climate pattern. In this activity, you’ll explore both—and then try the same process with a station near you.</p>
+        <div class="goal-chip"><span aria-hidden="true">◎</span><div><strong>Your goal</strong><br>Identify a long-term climate trend using weather-station data relevant to gardeners.</div></div>
+        <button class="button primary next-page" type="button">Start exploring <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="cloud cloud-a"></div>
+        <div class="cloud cloud-b"></div>
+        <div class="mini-chart">
+          <div class="mini-grid"></div>
+          <svg viewBox="0 0 320 170" role="presentation">
+            <polyline class="year-line" points="5,132 27,98 50,122 72,88 94,112 116,82 138,105 160,70 182,92 204,62 226,80 248,48 270,65 292,35 315,48" />
+            <line class="trend-line" x1="12" y1="126" x2="310" y2="42" />
+          </svg>
+          <div class="plant"><span></span><span></span><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" data-page="1" aria-labelledby="station-title" hidden>
+    <div class="section-heading">
+      <p class="kicker">Stop 2 · See the process</p>
+      <h2 id="station-title">Explore a weather station</h2>
+      <p>Watch the short demonstration to see how a station record becomes a climate story.</p>
+    </div>
+    <div class="content-card video-card">
+      <div class="video-wrapper">
+        <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_ipztpux2&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_zcc22b0e%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D" allowfullscreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="How to explore climate data using xmACIS"></iframe>
+      </div>
+    </div>
+    <div class="compare-cards" aria-label="Weather and climate comparison">
+      <div class="concept-card weather-card"><span class="concept-icon" aria-hidden="true">↕</span><div><h3>Individual years</h3><p>Temperatures move up and down. That variation is expected.</p><strong>Think: weather variability</strong></div></div>
+      <div class="concept-card climate-card"><span class="concept-icon" aria-hidden="true">↗</span><div><h3>Many years together</h3><p>A long record helps reveal the overall direction of change.</p><strong>Think: climate pattern</strong></div></div>
+    </div>
+    <div class="page-actions"><button class="button secondary prev-page" type="button">← Back</button><button class="button primary next-page" type="button">Explore the Corvallis record →</button></div>
+  </section>
+
+  <section class="page" data-page="2" aria-labelledby="graph-title" hidden>
+    <div class="section-heading">
+      <p class="kicker">Stop 3 · Explore the evidence</p>
+      <h2 id="graph-title">What do you notice in the Corvallis record?</h2>
+      <p>Move across the graph to compare individual years with the long-term trend.</p>
+    </div>
+    <div class="content-card graph-card">
+      <div class="graph-header"><div><h3>Corvallis annual average temperature</h3><p class="source-note">Station: Corvallis, Oregon · RCC-ACIS/xmACIS station data</p></div><div class="legend-helper"><span class="legend-dot annual"></span>Annual values <span class="legend-line"></span>Long-term trend</div></div>
+      <p id="data-status" class="status" role="status" aria-live="polite">Loading Corvallis station data…</p>
+      <div id="chart-area" hidden>
+        <div class="chart-wrapper"><canvas id="temperature-chart" role="img" aria-labelledby="graph-title chart-description"></canvas></div>
+        <p id="chart-description" class="sr-description">Annual average temperatures vary from year to year. A long-term trend line shows the overall direction of change across the record.</p>
+        <button type="button" id="toggle-table" class="text-button" aria-expanded="false" aria-controls="data-table-wrapper">View data as a table</button>
+        <div id="data-table-wrapper" class="table-wrapper" hidden><table><caption>Annual average temperature data for Corvallis</caption><thead><tr><th scope="col">Year</th><th scope="col">Average temperature</th></tr></thead><tbody id="data-table-body"></tbody></table></div>
+      </div>
+    </div>
+    <div class="notice-card"><span aria-hidden="true">👀</span><div><strong>First look</strong><p>Don’t calculate anything yet. Notice the year-to-year ups and downs, then look at the direction of the trend line.</p></div></div>
+    <div class="page-actions"><button class="button secondary prev-page" type="button">← Back</button><button class="button primary next-page" type="button">Make sense of the pattern →</button></div>
+  </section>
+
+  <section class="page" data-page="3" aria-labelledby="pattern-title" hidden>
+    <div class="section-heading">
+      <p class="kicker">Stop 4 · Make sense of the pattern</p>
+      <h2 id="pattern-title">Read the climate story</h2>
+      <p>Work through three short questions. Each focuses on one idea from the graph.</p>
+    </div>
+
+    <div class="question-deck" id="question-deck">
+      <article class="question-card is-active" data-question="q1" data-correct="b">
+        <p class="question-number">Question 1 of 3 · Year to year</p>
+        <h3>Suppose one year in Corvallis is cooler than the year before. What does that tell us?</h3>
+        <div class="answer-grid">
+          <label><input type="radio" name="q1" value="a"><span>It shows the climate has started cooling.</span></label>
+          <label><input type="radio" name="q1" value="b"><span>A cooler year can occur within a long-term warming trend.</span></label>
+          <label><input type="radio" name="q1" value="c"><span>It means the long-term trend line is incorrect.</span></label>
+        </div>
+        <button type="button" class="button check-answer">Check my thinking</button>
+        <div class="feedback" role="status" aria-live="polite"></div>
+        <button type="button" class="button primary question-next" hidden>Next question →</button>
+      </article>
+
+      <article class="question-card" data-question="q2" data-correct="c" hidden>
+        <p class="question-number">Question 2 of 3 · Zoom out</p>
+        <h3>Why is the long-term trend line useful?</h3>
+        <div class="answer-grid">
+          <label><input type="radio" name="q2" value="a"><span>It predicts the exact temperature of every future year.</span></label>
+          <label><input type="radio" name="q2" value="b"><span>It removes unusual years from the record.</span></label>
+          <label><input type="radio" name="q2" value="c"><span>It summarizes the overall direction of change despite year-to-year variability.</span></label>
+        </div>
+        <button type="button" class="button check-answer">Check my thinking</button>
+        <div class="feedback" role="status" aria-live="polite"></div>
+        <button type="button" class="button primary question-next" hidden>Next question →</button>
+      </article>
+
+      <article class="question-card" data-question="q3" data-correct="a" hidden>
+        <p class="question-number">Question 3 of 3 · Garden connection</p>
+        <h3>Why can a long-term warming trend matter to gardeners?</h3>
+        <div class="answer-grid">
+          <label><input type="radio" name="q3" value="a"><span>It can shift growing conditions, heat exposure, seasonal timing, and water needs over time.</span></label>
+          <label><input type="radio" name="q3" value="b"><span>It tells gardeners the exact weather on a future planting date.</span></label>
+          <label><input type="radio" name="q3" value="c"><span>It guarantees that frost will no longer occur.</span></label>
+        </div>
+        <button type="button" class="button check-answer">Check my thinking</button>
+        <div class="feedback" role="status" aria-live="polite"></div>
+        <button type="button" class="button primary finish-questions" hidden>Take it local →</button>
+      </article>
+    </div>
+    <div class="page-actions single"><button class="button secondary prev-page" type="button">← Back to graph</button></div>
+  </section>
+
+  <section class="page" data-page="4" aria-labelledby="local-title" hidden>
+    <div class="section-heading centered">
+      <p class="kicker">Stop 5 · Your turn</p>
+      <h2 id="local-title">Take the same approach to a station near you</h2>
+      <p>You’ve practiced with Corvallis. Now use the same data source to explore a station that matters to your garden.</p>
+    </div>
+
+    <div class="local-grid">
+      <div class="local-action-card xmacis-card">
+        <div class="big-icon" aria-hidden="true">📍</div>
+        <p class="step-label">Explore</p>
+        <h3>Open xmACIS</h3>
+        <ol>
+          <li>Choose a station near you.</li>
+          <li>Look across many years, not just one season.</li>
+          <li>Identify one pattern that stands out.</li>
+        </ol>
+        <a class="button primary external" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Open xmACIS <span class="sr-only">in a new tab</span> ↗</a>
+      </div>
+      <div class="arrow-between" aria-hidden="true">→</div>
+      <div class="local-action-card journal-card">
+        <div class="big-icon" aria-hidden="true">✎</div>
+        <p class="step-label">Record</p>
+        <h3>Add one journal entry</h3>
+        <p>In your Garden Observation Journal, record:</p>
+        <ul>
+          <li>the station or place you explored,</li>
+          <li>one long-term pattern you noticed, and</li>
+          <li>one garden condition you want to keep watching.</li>
+        </ul>
+        <a class="button journal-button external" href="https://beritdinsdale-oss.github.io/garden-observation-journal/" target="_blank" rel="noopener">Open Garden Journal <span class="sr-only">in a new tab</span> ↗</a>
+      </div>
+    </div>
+
+    <div class="completion-card"><span aria-hidden="true">✓</span><div><strong>You’ve completed the activity.</strong><p>The goal isn’t to predict next year’s weather. It’s to practice seeing climate patterns in long records—and connect them to what you observe locally.</p></div></div>
+    <div class="page-actions"><button class="button secondary prev-page" type="button">← Back</button><button class="button ghost" id="restart" type="button">Start over</button></div>
+  </section>
+</main>
+
+<footer><div class="wrap"><p>Climate and weather station data activity · Designed for accessible, self-paced learning</p></div></footer>
+</body>
+</html>
