@@ -1,29 +1,25 @@
-Tracking Climate Data — Module 2 rebuild
+Tracking Climate Data — Module 2 sample rebuild
 
-Purpose
-- Deliberately builds from the Module 1 activity "Digging in the Data."
-- Module 1: one 2024 growing season illustrates weather vs climate normal.
-- Module 2: widen the lens to a multi-decade record to distinguish year-to-year weather variability from a long-term climate trend.
+Instructional shift
+Module 1: learners were provided weather/climate data and interpreted it.
+Module 2: learners learn how to find climate evidence themselves, first with guided Corvallis questions and then with a station near their own garden.
 
-Data
-- 2024 growing-season snapshot carried forward from Module 1:
-  +1.1°F average daily high departure, -0.79 inches precipitation, April–September 2024 vs 1991–2020 normal.
-- Long-term graph:
-  NOAA/NCEI Global Summary of the Year, CORVALLIS STATE UNIVERSITY, OR US, station USC00351862.
-  Annual mean temperature values displayed from 1950–2024.
-  Years without a reported annual mean temperature in the NOAA summary are omitted.
-- Source accessed August 2026:
-  NOAA National Centers for Environmental Information, Global Summary of the Year.
+Included
+- Existing Kaltura tutorial embed: entry_id=1_ipztpux2
+- xmACIS link
+- Guided Corvallis research:
+  1. Long-term average temperature
+  2. Long-term precipitation
+  3. Last spring freeze (minimum temperature <=32 F), using First/Last Dates
+- Local climate snapshot with the same research structure
+- Browser storage for Field Notebook handoff:
+  localStorage key = fieldNotebook.climateSnapshot
 
-Accessibility
-- Keyboard-operable controls
-- Visible focus styles
-- Accessible annual data table
-- No color-only questions or required hover interaction
-- Reduced-motion support
+IMPORTANT FOR JOURNAL INTEGRATION
+The current Garden Journal will need a small reader added for `fieldNotebook.climateSnapshot`.
+This sample saves the data but does not modify the separate journal repository.
 
-Files
-index.html
-styles.css
-app.js
-climate-data.js
+Data/tool basis
+xmACIS supports Seasonal Time Series with trend/smoothing options and a First/Last Dates product with graph/trend options. ACIS documentation also supports last spring threshold dates such as last minimum temperature <=28 F; this sample uses <=32 F as a gardening-relevant freeze threshold.
+
+This is a sample instructional build intended for review before final deployment.
