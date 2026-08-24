@@ -1,210 +1,198 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tracking Climate Data</title>
-  <link rel="stylesheet" href="styles.css?v=3">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking Climate Data</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to activity</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">Module 2 • Climate data</p>
-    <h1>Tracking Climate Data</h1>
-    <p class="lede">Explore a weather-station record, practice spotting climate patterns, and then try the same process with a station near you.</p>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-title">Tracking Climate Data</span>
+    <span class="brand-subtitle">From one year of weather to a pattern across decades</span>
   </div>
+  <div class="step-label" id="step-label">Start here</div>
 </header>
 
-<nav class="roadmap" aria-label="Activity progress">
-  <button class="road-step active" data-go="0"><span>1</span>Start</button>
-  <button class="road-step" data-go="1"><span>2</span>Station</button>
-  <button class="road-step" data-go="2"><span>3</span>Graph</button>
-  <button class="road-step" data-go="3"><span>4</span>Pattern</button>
-  <button class="road-step" data-go="4"><span>5</span>Local</button>
-</nav>
-
-<main id="main" class="shell">
-
-<section class="page active" data-page="0">
-  <div class="card welcome-card">
-    <div class="big-icon" aria-hidden="true">🌦️</div>
-    <p class="kicker">A climate story in data</p>
-    <h2>What can one weather station tell us?</h2>
-    <p>Weather stations record conditions year after year. Looking across many years lets us move beyond individual weather events and start seeing climate patterns.</p>
-
-    <div class="mini-grid">
-      <div class="mini-card">
-        <span aria-hidden="true">📅</span>
-        <strong>One year</strong>
-        <p>Shows variability and unusual weather.</p>
-      </div>
-      <div class="mini-card">
-        <span aria-hidden="true">📈</span>
-        <strong>Many years</strong>
-        <p>Reveal longer-term climate patterns.</p>
-      </div>
+<main id="main" tabindex="-1">
+  <section class="screen intro-screen active" data-screen="0" aria-labelledby="intro-heading">
+    <div class="notebook-hero" aria-hidden="true">
+      <div class="year-card one"><span>2024</span><strong>one growing season</strong></div>
+      <div class="zoom-arrow">→</div>
+      <div class="year-card many"><span>1950–2024</span><strong>many years</strong></div>
+      <div class="scribble">zoom out</div>
     </div>
-  </div>
-  <div class="navrow"><span></span><button class="primary next">Start exploring →</button></div>
-</section>
-
-<section class="page" data-page="1">
-  <div class="card">
-    <div class="big-icon" aria-hidden="true">📍</div>
-    <p class="kicker">Stop 2</p>
-    <h2>Learn how to look up weather-station data</h2>
-    <p>Watch the short demonstration to see how to find a weather station, select a date range, and open a long-term climate record in xmACIS.</p>
-
-    <div class="video-wrap">
-      <iframe
-        id="kalturaFrame"
-        title="How to explore climate data using xmACIS"
-        src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_ipztpux2&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_zcc22b0e%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D"
-        allow="autoplay *; fullscreen *; encrypted-media *"
-        sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
-        allowfullscreen>
-      </iframe>
+    <div class="intro-copy">
+      <p class="eyebrow">Module 2 · Widen the view</p>
+      <h1 id="intro-heading">What changes when we look across many years?</h1>
+      <p class="big-copy">In Module 1, one growing season helped us separate weather from climate. Now we’ll use a longer record to look for a climate pattern.</p>
+      <p>You’ll start with the 2024 weather you already know, then widen the view to decades of temperature observations from the same Corvallis State University station.</p>
+      <p class="source-note"><strong>Long-term data:</strong> NOAA/NCEI Global Summary of the Year, Corvallis State University station (USC00351862). Years with no reported annual mean temperature are left out.</p>
+      <button class="primary begin" type="button">Widen the view</button>
     </div>
+  </section>
 
-    <div class="notice-grid">
-      <div class="notice blue">
-        <strong>Individual years = variability</strong>
-        <span>Some years are warmer, cooler, wetter, or drier than others.</span>
+  <section class="screen" data-screen="1" aria-labelledby="familiar-heading">
+    <div class="wide-page">
+      <div class="page-heading">
+        <p class="eyebrow">Step 1 · Start with weather</p>
+        <h1 id="familiar-heading">You’ve seen this year before</h1>
+        <p>In <em>Digging in the Data</em>, you compared the April–September 2024 growing season with the long-term normal.</p>
       </div>
-      <div class="notice yellow">
-        <strong>Many years = climate pattern</strong>
-        <span>Long records help us see whether conditions are changing over time.</span>
+
+      <div class="snapshot-card">
+        <p class="tiny-label">CORVALLIS · APRIL–SEPTEMBER 2024</p>
+        <h2>One growing season</h2>
+        <div class="departure-grid">
+          <div class="departure"><span aria-hidden="true">↟</span><strong>+1.1°F</strong><small>warmer than normal</small></div>
+          <div class="departure"><span aria-hidden="true">☂</span><strong>−0.79 in</strong><small>drier than normal</small></div>
+        </div>
+        <p>This tells us something useful about <strong>2024 weather</strong>. But what can one year tell us about climate change?</p>
       </div>
+
+      <section class="question-card" aria-labelledby="q1-heading">
+        <span class="stamp">Think it through</span>
+        <h2 id="q1-heading">Because 2024 was warmer than normal, can we conclude from this year alone that Corvallis’s climate is warming?</h2>
+        <div class="answer-stack" data-question="q1">
+          <button class="answer" data-correct="false" type="button">Yes. Any warmer-than-normal year shows the climate has warmed.</button>
+          <button class="answer" data-correct="true" type="button">No. One year can be unusual; we need many years to identify a climate pattern.</button>
+          <button class="answer" data-correct="false" type="button">No. Climate data cannot include individual years.</button>
+        </div>
+        <div class="feedback" id="q1-feedback" aria-live="polite"></div>
+      </section>
     </div>
-  </div>
-  <div class="navrow"><button class="secondary back">← Back</button><button class="primary next">Explore the Corvallis record →</button></div>
-</section>
+  </section>
 
-<section class="page" data-page="2">
-  <div class="card">
-    <div class="big-icon" aria-hidden="true">📊</div>
-    <p class="kicker">Stop 3</p>
-    <h2>Explore the Corvallis temperature record</h2>
-    <p>This graph shows annual average temperature from the Corvallis station. Hover over or focus on points to inspect individual years, then look at the longer-term pattern.</p>
-
-    <div class="chart-shell">
-      <canvas id="climateChart" aria-label="Annual average temperature for Corvallis, Oregon"></canvas>
-      <p id="chartStatus" class="status" aria-live="polite">Loading climate data…</p>
-    </div>
-
-    <details class="data-details">
-      <summary>Prefer a table? View the climate data</summary>
-      <div class="table-wrap">
-        <table id="dataTable">
-          <thead><tr><th>Year</th><th>Annual average temperature (°F)</th></tr></thead>
-          <tbody></tbody>
-        </table>
+  <section class="screen" data-screen="2" aria-labelledby="zoom-heading">
+    <div class="wide-page">
+      <div class="page-heading">
+        <p class="eyebrow">Step 2 · Zoom out</p>
+        <h1 id="zoom-heading">Now look across decades</h1>
+        <p>Each dot is one year’s annual mean temperature. The dots bounce up and down because weather varies from year to year. Turn on the trend line to see the broader direction.</p>
       </div>
-    </details>
 
-    <div class="thinking-box">
-      <strong>Before you answer anything, just notice.</strong>
-      <p>What catches your attention first: individual years, clusters of years, or the overall direction of the record?</p>
-    </div>
-  </div>
-  <div class="navrow"><button class="secondary back">← Back</button><button class="primary next">Make sense of the pattern →</button></div>
-</section>
-
-<section class="page" data-page="3">
-  <div class="card">
-    <div class="big-icon" aria-hidden="true">🔎</div>
-    <p class="kicker">Stop 4</p>
-    <h2>Make sense of the pattern</h2>
-    <p class="question-intro">Work through one idea at a time. Choose an answer, read the feedback, then continue.</p>
-
-    <div class="question-card active" data-q="0">
-      <span class="question-count">1 of 3</span>
-      <div class="question-graph">
-        <p class="graph-label"><strong>Keep the evidence in view</strong> — Corvallis annual average temperature</p>
-        <div class="mini-chart-shell">
-          <canvas id="questionChart0" aria-label="Corvallis annual average temperature graph for question 1"></canvas>
+      <div class="data-card">
+        <div class="toggle-row">
+          <label class="toggle-pill"><input id="show-years" type="checkbox" checked> <span>Individual years</span></label>
+          <label class="toggle-pill"><input id="show-trend" type="checkbox"> <span>Long-term trend</span></label>
+        </div>
+        <div id="climate-chart" class="chart" role="img" aria-label="Annual mean temperature at Corvallis State University from 1950 through 2024, with an optional long-term trend line"></div>
+        <p class="chart-note" id="chart-note">Start with the individual years. Notice how much they move up and down.</p>
+        <button id="toggle-table" class="text-button" type="button" aria-expanded="false" aria-controls="table-wrap">View accessible annual data table</button>
+        <div id="table-wrap" hidden class="table-scroll">
+          <table>
+            <caption>Annual mean temperature, Corvallis State University</caption>
+            <thead><tr><th scope="col">Year</th><th scope="col">Annual mean temperature (°F)</th></tr></thead>
+            <tbody id="climate-table-body"></tbody>
+          </table>
         </div>
       </div>
-      <h3>Can a cool year still happen during a long-term warming trend?</h3>
-      <div class="answer-grid">
-        <button class="answer" data-correct="true">Yes. Individual years can vary even while the long-term pattern warms.</button>
-        <button class="answer" data-correct="false">No. Every year should be warmer than the one before it.</button>
-      </div>
-      <div class="feedback hidden" aria-live="polite"></div>
-      <button class="question-next primary hidden">Next idea →</button>
-    </div>
 
-    <div class="question-card" data-q="1">
-      <span class="question-count">2 of 3</span>
-      <div class="question-graph">
-        <p class="graph-label"><strong>Keep the evidence in view</strong> — Corvallis annual average temperature</p>
-        <div class="mini-chart-shell">
-          <canvas id="questionChart1" aria-label="Corvallis annual average temperature graph for question 2"></canvas>
+      <section class="question-card" aria-labelledby="q2-heading">
+        <span class="stamp">Read the pattern</span>
+        <h2 id="q2-heading">What do the individual points show that the trend line does not?</h2>
+        <div class="answer-stack" data-question="q2">
+          <button class="answer" data-correct="true" type="button">Year-to-year variability: some years are warmer and some are cooler.</button>
+          <button class="answer" data-correct="false" type="button">That temperatures increase every single year.</button>
+          <button class="answer" data-correct="false" type="button">The exact temperature that will occur next year.</button>
+        </div>
+        <div class="feedback" id="q2-feedback" aria-live="polite"></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="screen" data-screen="3" aria-labelledby="wiggle-heading">
+    <div class="wide-page">
+      <div class="page-heading">
+        <p class="eyebrow">Step 3 · Weather can wiggle</p>
+        <h1 id="wiggle-heading">A cooler year can still happen in a warming climate</h1>
+        <p>Look at this recent sequence from the long-term record.</p>
+      </div>
+
+      <div class="year-strip" aria-label="Recent annual mean temperatures">
+        <div><span>2021</span><strong>53.9°F</strong></div>
+        <div class="cooler"><span>2022</span><strong>52.8°F</strong></div>
+        <div><span>2023</span><strong>53.5°F</strong></div>
+        <div><span>2024</span><strong>53.8°F</strong></div>
+      </div>
+
+      <section class="question-card" aria-labelledby="q3-heading">
+        <span class="stamp">Interpret</span>
+        <h2 id="q3-heading">2022 was cooler than 2021. What does that tell us?</h2>
+        <div class="answer-stack" data-question="q3">
+          <button class="answer" data-correct="false" type="button">The long-term warming pattern ended in 2022.</button>
+          <button class="answer" data-correct="true" type="button">Individual years still vary, even when the long-term pattern is warming.</button>
+          <button class="answer" data-correct="false" type="button">2021 must have been an error because it was warmer.</button>
+        </div>
+        <div class="feedback" id="q3-feedback" aria-live="polite"></div>
+      </section>
+
+      <div class="field-note"><strong>Field note:</strong> A climate trend describes the overall direction across many years. It does not mean every year moves in that direction.</div>
+    </div>
+  </section>
+
+  <section class="screen" data-screen="4" aria-labelledby="together-heading">
+    <div class="wide-page">
+      <div class="page-heading">
+        <p class="eyebrow">Step 4 · Put the two views together</p>
+        <h1 id="together-heading">Weather is one part of the climate record</h1>
+      </div>
+
+      <div class="lens-board">
+        <div class="lens weather-lens">
+          <span class="tiny-label">MODULE 1 · WEATHER</span>
+          <h2>What happened in 2024?</h2>
+          <p>The growing season was <strong>1.1°F warmer</strong> and <strong>0.79 inches drier</strong> than the 1991–2020 normal.</p>
+          <div class="mini-year">2024</div>
+        </div>
+        <div class="lens-arrow" aria-hidden="true">→</div>
+        <div class="lens climate-lens">
+          <span class="tiny-label">MODULE 2 · CLIMATE</span>
+          <h2>What pattern appears over time?</h2>
+          <p>The annual temperature record moves up and down from year to year, while its long-term trend rises across the record.</p>
+          <div class="mini-trend" aria-hidden="true"><i></i></div>
         </div>
       </div>
-      <h3>Why is the long record more useful for understanding climate than one unusually hot year?</h3>
-      <div class="answer-grid">
-        <button class="answer" data-correct="false">Because the hottest year always tells us what the future climate will be.</button>
-        <button class="answer" data-correct="true">Because climate is about patterns over many years, not one weather event.</button>
-      </div>
-      <div class="feedback hidden" aria-live="polite"></div>
-      <button class="question-next primary hidden">Next idea →</button>
-    </div>
 
-    <div class="question-card" data-q="2">
-      <span class="question-count">3 of 3</span>
-      <div class="question-graph">
-        <p class="graph-label"><strong>Keep the evidence in view</strong> — Corvallis annual average temperature</p>
-        <div class="mini-chart-shell">
-          <canvas id="questionChart2" aria-label="Corvallis annual average temperature graph for question 3"></canvas>
+      <section class="question-card" aria-labelledby="q4-heading">
+        <span class="stamp">Bring it home</span>
+        <h2 id="q4-heading">Which statement best uses both weather and climate evidence?</h2>
+        <div class="answer-stack" data-question="q4">
+          <button class="answer" data-correct="false" type="button">2024 was warm, so that year by itself proves the climate trend.</button>
+          <button class="answer" data-correct="false" type="button">Some years are cooler, so there is no long-term temperature pattern.</button>
+          <button class="answer" data-correct="true" type="button">2024 tells us what happened in one year; the multi-decade record shows whether that year sits within a longer-term pattern.</button>
         </div>
-      </div>
-      <h3>Why might a long-term warming pattern matter to gardeners?</h3>
-      <div class="answer-grid">
-        <button class="answer" data-correct="true">It can influence heat stress, water demand, seasonal timing, and which plants thrive.</button>
-        <button class="answer" data-correct="false">It only matters to weather stations, not gardens.</button>
-      </div>
-      <div class="feedback hidden" aria-live="polite"></div>
-      <button class="question-next primary hidden">Take it local →</button>
+        <div class="feedback" id="q4-feedback" aria-live="polite"></div>
+      </section>
     </div>
-  </div>
-  <div class="navrow"><button class="secondary back">← Back</button><span></span></div>
-</section>
+  </section>
 
-<section class="page" data-page="4">
-  <div class="card finish-card">
-    <div class="big-icon" aria-hidden="true">🗺️</div>
-    <p class="kicker">Your turn</p>
-    <h2>Explore a weather station near you</h2>
-    <p>You just practiced with Corvallis. Now use the same tool to look for a long-term pattern closer to where you live or garden.</p>
-
-    <div class="three-steps">
-      <div><span>1</span><p><strong>Choose a station</strong><br>Find a station near your community or another place that interests you.</p></div>
-      <div><span>2</span><p><strong>Look across many years</strong><br>Choose a long record rather than focusing on one unusual year.</p></div>
-      <div><span>3</span><p><strong>Notice one pattern</strong><br>What seems to be changing, staying similar, or varying from year to year?</p></div>
-    </div>
-
-    <a class="action-link" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Open xmACIS and explore a station ↗</a>
-
-    <div class="journal-box">
-      <div class="journal-icon" aria-hidden="true">📓</div>
-      <div>
-        <h3>Carry your observation into your Garden Journal</h3>
-        <p>Record the station or place you explored, one long-term pattern you noticed, and one garden condition you want to keep watching.</p>
-        <a class="journal-link" href="https://beritdinsdale-oss.github.io/garden-observation-journal/" target="_blank" rel="noopener">Open my Garden Journal ↗</a>
+  <section class="screen completion-screen" data-screen="5" aria-labelledby="complete-heading">
+    <div class="complete-card">
+      <div class="complete-doodle" aria-hidden="true">✦</div>
+      <p class="eyebrow">The lens is wider now</p>
+      <h1 id="complete-heading">One year is weather. Many years reveal climate.</h1>
+      <div class="final-pair">
+        <div><span class="final-label">ONE YEAR</span><strong>Weather varies</strong><p>A year may be warmer, cooler, wetter, or drier than normal.</p></div>
+        <div><span class="final-label">MANY YEARS</span><strong>Patterns emerge</strong><p>Climate trends become visible when we examine observations across decades.</p></div>
       </div>
+      <p class="final-takeaway">The Corvallis record is a good reminder that <strong>year-to-year variability and a long-term trend can exist at the same time.</strong></p>
+      <p class="source-note">Source: NOAA National Centers for Environmental Information, Global Summary of the Year, station USC00351862. The station record extends back to the late 1800s; this activity displays reported annual mean temperatures from 1950–2024 for a clear classroom view.</p>
+      <button class="secondary restart" type="button">Explore again</button>
     </div>
-
-    <p class="completion">You’re finished with this activity once you have explored a local station and saved your observation in the journal.</p>
-  </div>
-  <div class="navrow"><button class="secondary back">← Back</button><button class="secondary" id="restart">Start over</button></div>
-</section>
-
+  </section>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="app.js?v=3"></script>
+<nav class="bottom-nav" aria-label="Activity navigation">
+  <button id="previous" class="nav-button" type="button">← Back</button>
+  <ol class="steps" aria-label="Progress"><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ol>
+  <button id="next" class="nav-button next-button" type="button" disabled>Next →</button>
+</nav>
+
+<script src="climate-data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
