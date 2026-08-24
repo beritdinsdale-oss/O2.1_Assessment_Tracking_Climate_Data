@@ -24,3 +24,18 @@ xmACIS
 https://xmacis.rcc-acis.org/
 
 This is a review build. Corvallis spring-freeze answer feedback is intentionally non-prescriptive until the exact station/product output is reviewed in the live tool.
+
+v3 instruction update
+- Corvallis station workflow now follows learner sequence:
+  Single-Station > Seasonal Time Series > Station Selection SEARCH > 97331 > Go > Corvallis State University.
+- Question 2 keeps Corvallis selected and changes only the climate variable.
+- Question 3 keeps Corvallis selected and changes to First/Last Dates.
+- Own-site investigation explicitly tells learners to SEARCH by their own ZIP code and click Go.
+
+v4 instructional sequence
+- The Kaltura video is now explicitly a worked example: Corvallis Seasonal Time Series > Annual Average Temperature.
+- Immediately after the video, learners recreate that same graph themselves.
+- The temperature setup is presented only as a compact reminder, not a second tutorial.
+- Precipitation is framed as the first transfer task: use the same Seasonal Time Series method for a new variable.
+- Spring freeze is framed as a new type of climate question requiring a different xmACIS view.
+- Temperature feedback explicitly reinforces weather (year-to-year variation) versus climate (long-term pattern).
