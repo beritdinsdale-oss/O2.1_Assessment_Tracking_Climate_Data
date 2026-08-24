@@ -1,25 +1,26 @@
-Tracking Climate Data — Module 2 sample rebuild
+Tracking Climate Data — Module 2 playful guided-research rebuild
 
-Instructional shift
-Module 1: learners were provided weather/climate data and interpreted it.
-Module 2: learners learn how to find climate evidence themselves, first with guided Corvallis questions and then with a station near their own garden.
+Design intent
+- Playful garden/field-notebook visual language
+- Questions come before the Kaltura tutorial
+- Corvallis is guided practice, one climate question per page
+- Each page gives the exact xmACIS settings needed for that question
+- Learners repeat the same research at their own station
+- Local responses save to localStorage under:
+  fieldNotebook.climateSnapshot
 
-Included
-- Existing Kaltura tutorial embed: entry_id=1_ipztpux2
-- xmACIS link
-- Guided Corvallis research:
-  1. Long-term average temperature
-  2. Long-term precipitation
-  3. Last spring freeze (minimum temperature <=32 F), using First/Last Dates
-- Local climate snapshot with the same research structure
-- Browser storage for Field Notebook handoff:
-  localStorage key = fieldNotebook.climateSnapshot
+Research questions
+1. Long-term average temperature change
+2. Long-term total precipitation change
+3. Change in timing of last spring freeze (minimum temperature <=32 F)
 
-IMPORTANT FOR JOURNAL INTEGRATION
-The current Garden Journal will need a small reader added for `fieldNotebook.climateSnapshot`.
-This sample saves the data but does not modify the separate journal repository.
+Journal integration
+This package saves the local climate snapshot in browser storage. The separate Field Notebook repository still needs a reader for the same localStorage key before the entry will visibly appear there.
 
-Data/tool basis
-xmACIS supports Seasonal Time Series with trend/smoothing options and a First/Last Dates product with graph/trend options. ACIS documentation also supports last spring threshold dates such as last minimum temperature <=28 F; this sample uses <=32 F as a gardening-relevant freeze threshold.
+Kaltura tutorial
+Uses the previously supplied Kaltura entry 1_ipztpux2.
 
-This is a sample instructional build intended for review before final deployment.
+xmACIS
+https://xmacis.rcc-acis.org/
+
+This is a review build. Corvallis spring-freeze answer feedback is intentionally non-prescriptive until the exact station/product output is reviewed in the live tool.
