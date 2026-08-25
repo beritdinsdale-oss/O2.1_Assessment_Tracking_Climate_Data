@@ -102,8 +102,8 @@
  <div class="practice-card"><span class="pin">⌖</span><div><small>OUR PRACTICE STATION</small><strong>Corvallis State University</strong><p>We’ll practice here before you choose a station near your own garden.</p></div></div>
  <div class="questions-preview"><p class="hand">Three questions to investigate</p>
   <div><span>🌡️</span><strong>Temperature</strong><p>Has it changed over time?</p></div>
-  <div><span>💧</span><strong>Precipitation</strong><p>Has it changed over time?</p></div>
   <div><span>🌼</span><strong>Seasons</strong><p>Does temperature change look the same in spring and summer?</p></div>
+  <div><span>💧</span><strong>Precipitation</strong><p>Has it changed over time?</p></div>
  </div>
 </div></section>
 
@@ -113,12 +113,12 @@
 </div>
  <p class="eyebrow">Step 2 · Watch one example</p><h1>See how to find the temperature record</h1>
  <p class="lead short">Follow along as the video shows how to find <strong>Corvallis State University</strong> and create a <strong>Seasonal Time Series</strong> for annual average temperature.</p>
- <div class="video-card"><iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_53ch9qjz&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_22btb15p%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D'  style="width: 100%; max-width: 800px; aspect-ratio: 16 / 9; height: auto; border: 0; display: block; margin: 0 auto;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Module 2 Tracking Climate Data"></iframe></div>
+ <div class="video-card"><iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_53ch9qjz&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_22btb15p%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D' style="width: 100%; max-width: 800px; aspect-ratio: 16 / 9; height: auto; border: 0; display: block; margin: 0 auto;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Module 2 Tracking Climate Data"></iframe></div>
  <div class="sticky-note"><strong>Next:</strong> you’ll recreate the same graph yourself—then use what you learned to investigate new climate questions.</div>
 </div></section>
 
 <section class="page" data-page="3"><div class="wrap">
- <div class="mission-heading temp"><div class="flower-line" aria-hidden="true">✿ ─── ❀</div><p class="eyebrow">Corvallis · Question 1</p><h1>Has temperature changed over time?</h1></div>
+ <div class="mission-heading temp"><div class="flower-line" aria-hidden="true">✿ ─── ❀</div><p class="eyebrow">Corvallis · Question 1</p><h1>Has average annual temperature changed over time?</h1></div>
  <div class="research-grid"><div class="recipe try-card">
   <span class="tape" aria-hidden="true"></span>
   <p class="hand">Now you try</p>
@@ -129,44 +129,53 @@
     <p><strong>Single-Station → Seasonal Time Series</strong></p>
     <p>Average Temperature → Annual</p>
     <p>Station Selection: <strong>SEARCH → 97331 → Go → Corvallis State University</strong></p>
+    <p><strong>Options Selection → More Options → add Regression Line</strong></p>
   </div>
-  <p class="hint">Use the long record and display the trend so you can look beyond individual years.</p>
+  <div class="regression-note compact-regression">
+    <div class="regression-sketch" aria-hidden="true">
+      <svg viewBox="0 0 240 105">
+        <g fill="#8aa6ad"><circle cx="18" cy="74" r="5"/><circle cx="42" cy="55" r="5"/><circle cx="66" cy="69" r="5"/><circle cx="91" cy="47" r="5"/><circle cx="117" cy="58" r="5"/><circle cx="143" cy="38" r="5"/><circle cx="168" cy="49" r="5"/><circle cx="194" cy="25" r="5"/><circle cx="220" cy="34" r="5"/></g>
+        <path d="M14 72 L225 29" stroke="#c45c35" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <p class="hand">What does a regression line show?</p>
+      <p>A regression line shows the <strong>overall direction</strong> across many years.</p>
+      <div class="trend-key"><span>↗ increasing</span><span>→ little change</span><span>↘ decreasing</span></div>
+    </div>
+  </div>
   <a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Open xmACIS ↗</a>
  </div><div class="observe-card"><span class="stamp">Look at your graph</span><h2>What does the long-term record suggest?</h2>
- <div class="answers" data-q="temp"><button data-ok="true">Overall temperatures have increased</button><button>Overall temperatures have decreased</button><button>No clear long-term change</button><button>I’m not sure</button></div><div class="feedback" id="temp-feedback"></div>
+ <div class="answers" data-q="temp"><button data-ok="true">Average annual temperatures have increased</button><button>Average annual temperatures have decreased</button><button>No clear long-term change in average annual temperature</button><button>I’m not sure</button></div><div class="feedback" id="temp-feedback"></div>
  </div></div>
 </div></section>
 
 <section class="page" data-page="4"><div class="wrap">
- <div class="mission-heading rain"><div class="flower-line" aria-hidden="true">❀ ─── ✿</div><p class="eyebrow">Corvallis · Question 2</p><h1>Now change the question.</h1><p class="lead short">You know how to create a Seasonal Time Series. Use the same tool to investigate: <strong>Has annual precipitation changed over time in Corvallis?</strong></p></div>
+<div class="mission-heading frost"><div class="flower-line" aria-hidden="true">🌷 ─── ☀️</div><p class="eyebrow">Corvallis · Question 2</p>
+<h1>Does temperature change look the same in every season?</h1>
+<p class="lead short">An annual average combines the whole year. Now you’ll zoom in and compare <strong>spring</strong> with <strong>summer</strong>.</p></div>
+<div class="season-steps">
+<article class="season-card spring-card"><span class="season-number">1</span><div class="season-art" aria-hidden="true">🌷</div><p class="eyebrow">First</p><h2>Look at spring</h2><p>Keep <strong>Average Temperature → Mean</strong>.</p><div class="setting-change"><small>Period of interest</small><strong>Spring (Mar–May)</strong></div><p>Under <strong>Options Selection → More Options</strong>, add the <strong>Regression Line</strong>.</p></article>
+<article class="season-card summer-card"><span class="season-number">2</span><div class="season-art" aria-hidden="true">☀️</div><p class="eyebrow">Then</p><h2>Change to summer</h2><p>Keep everything else the same.</p><div class="setting-change"><small>Change only</small><strong>Summer (Jun–Aug)</strong></div><p>Keep the regression line on and compare it with spring.</p></article>
+</div>
+<div class="center-link"><a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Compare the seasons in xmACIS ↗</a></div>
+<div class="observe-card season-question"><span class="stamp">Compare what you found</span><h2>Which statement best describes the two regression lines?</h2>
+<div class="answers" data-q="seasons"><button>Spring and summer show about the same long-term change</button><button data-ok="true">Summer shows a stronger warming trend than spring</button><button>Spring shows a stronger warming trend than summer</button><button>Neither season shows much long-term change</button></div><div class="feedback" id="seasons-feedback"></div></div>
+</div></section>
+
+<section class="page" data-page="5"><div class="wrap">
+ <div class="mission-heading rain"><div class="flower-line" aria-hidden="true">❀ ─── ✿</div><p class="eyebrow">Corvallis · Question 3</p><h1>Now try a different climate variable.</h1><p class="lead short">You know how to create a Seasonal Time Series. Use the same tool to investigate: <strong>Has annual precipitation changed over time in Corvallis?</strong></p></div>
  <div class="research-grid"><div class="recipe">
   <span class="tape"></span>
   <p class="hand">Use what you just learned</p>
   <div class="keep"><strong>Keep:</strong> Corvallis State University · Seasonal Time Series · Annual · long record</div>
   <p class="change-label">CHANGE THE VARIABLE:</p>
-  <div class="setting-change"><small>Choose</small><strong>Total Precipitation</strong></div>
+  <div class="setting-change"><small>Choose</small><strong>Precipitation</strong></div>
   <p class="hint">Display the graph and trend again. Look across the whole record rather than focusing on one especially wet or dry year.</p>
   <a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Back to xmACIS ↗</a>
  </div><div class="observe-card"><span class="stamp">Look at your graph</span><h2>Which description fits best?</h2>
  <div class="answers" data-q="precip"><button>Overall precipitation has increased</button><button>Overall precipitation has decreased</button><button data-ok="true">There is lots of year-to-year variability and the long-term change is less clear</button><button>I’m not sure</button></div><div class="feedback" id="precip-feedback"></div>
  </div></div>
-</div></section>
-
-<section class="page" data-page="5"><div class="wrap">
-<div class="mission-heading frost"><div class="flower-line" aria-hidden="true">🌷 ─── ☀️</div><p class="eyebrow">Corvallis · Question 3</p>
-<h1>Does temperature change look the same in every season?</h1>
-<p class="lead short">An annual average combines the whole year. Now you’ll zoom in and compare <strong>spring</strong> with <strong>summer</strong>.</p></div>
-<div class="regression-note"><div class="regression-sketch" aria-hidden="true"><svg viewBox="0 0 240 105"><g fill="#8aa6ad"><circle cx="18" cy="74" r="5"/><circle cx="42" cy="55" r="5"/><circle cx="66" cy="69" r="5"/><circle cx="91" cy="47" r="5"/><circle cx="117" cy="58" r="5"/><circle cx="143" cy="38" r="5"/><circle cx="168" cy="49" r="5"/><circle cx="194" cy="25" r="5"/><circle cx="220" cy="34" r="5"/></g><path d="M14 72 L225 29" stroke="#c45c35" stroke-width="5" stroke-linecap="round"/></svg></div>
-<div><p class="hand">What does a regression line show?</p><p>Yearly temperatures bounce up and down. A regression line helps you see the <strong>overall direction across the whole record.</strong></p>
-<div class="trend-key"><span>↗ generally increasing</span><span>→ little overall change</span><span>↘ generally decreasing</span></div>
-<p class="hint">It doesn’t mean every year follows the line. Individual years can still be warmer or cooler.</p></div></div>
-<div class="season-steps">
-<article class="season-card spring-card"><span class="season-number">1</span><div class="season-art" aria-hidden="true">🌷</div><p class="eyebrow">First</p><h2>Look at spring</h2><p>Keep <strong>Average Temperature → Mean</strong>.</p><div class="setting-change"><small>Period of interest</small><strong>Spring (Mar–May)</strong></div><p>Add the <strong>Regression Line</strong>. Notice its overall direction.</p></article>
-<article class="season-card summer-card"><span class="season-number">2</span><div class="season-art" aria-hidden="true">☀️</div><p class="eyebrow">Then</p><h2>Change to summer</h2><p>Keep everything else the same.</p><div class="setting-change"><small>Change only</small><strong>Summer (Jun–Aug)</strong></div><p>Look at the regression line again. How does it compare with spring?</p></article>
-</div>
-<div class="center-link"><a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Compare the seasons in xmACIS ↗</a></div>
-<div class="observe-card season-question"><span class="stamp">Compare what you found</span><h2>Which statement best describes the two regression lines?</h2>
-<div class="answers" data-q="seasons"><button>Spring and summer show about the same long-term change</button><button data-ok="true">Summer shows a stronger warming trend than spring</button><button>Spring shows a stronger warming trend than summer</button><button>Neither season shows much long-term change</button></div><div class="feedback" id="seasons-feedback"></div></div>
 </div></section>
 
 <section class="page" data-page="6"><div class="wrap floral">

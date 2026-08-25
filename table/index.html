@@ -102,8 +102,8 @@
  <div class="practice-card"><span class="pin">⌖</span><div><small>OUR PRACTICE STATION</small><strong>Corvallis State University</strong><p>We’ll practice here before you choose a station near your own garden.</p></div></div>
  <div class="questions-preview"><p class="hand">Three questions to investigate</p>
   <div><span>🌡️</span><strong>Temperature</strong><p>Has it changed over time?</p></div>
-  <div><span>💧</span><strong>Precipitation</strong><p>Has it changed over time?</p></div>
   <div><span>🌼</span><strong>Seasons</strong><p>Does temperature change look the same in spring and summer?</p></div>
+  <div><span>💧</span><strong>Precipitation</strong><p>Has it changed over time?</p></div>
  </div>
 </div></section>
 
@@ -113,12 +113,12 @@
 </div>
  <p class="eyebrow">Step 2 · Watch one example</p><h1>See how to find the temperature record</h1>
  <p class="lead short">Watch how to find the Corvallis Seasonal Time Series. Then you’ll use the <strong>table output</strong>. </p>
- <div class="video-card"><iframe title="How to explore climate data using xmACIS" src="https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&entry_id=1_ipztpux2" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe></div>
+ <div class="video-card"><iframe id="kaltura_player" src='https://cdnapisec.kaltura.com/p/391241/embedPlaykitJs/uiconf_id/44855082?iframeembed=true&amp;entry_id=1_53ch9qjz&amp;config%5Bprovider%5D=%7B%22widgetId%22%3A%221_22btb15p%22%7D&amp;config%5Bplayback%5D=%7B%22startTime%22%3A0%7D' style="width: 100%; max-width: 800px; aspect-ratio: 16 / 9; height: auto; border: 0; display: block; margin: 0 auto;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Module 2 Tracking Climate Data"></iframe></div>
  <div class="sticky-note"><strong>Next:</strong> recreate the search and choose the table output.</div>
 </div></section>
 
 <section class="page" data-page="3"><div class="wrap">
- <div class="mission-heading temp"><div class="flower-line" aria-hidden="true">✿ ─── ❀</div><p class="eyebrow">Corvallis · Question 1</p><h1>Has temperature changed over time?</h1></div>
+ <div class="mission-heading temp"><div class="flower-line" aria-hidden="true">✿ ─── ❀</div><p class="eyebrow">Corvallis · Question 1</p><h1>Has average annual temperature changed over time?</h1></div>
  <div class="research-grid"><div class="recipe try-card">
   <span class="tape" aria-hidden="true"></span>
   <p class="hand">Now you try</p>
@@ -129,31 +129,17 @@
     <p><strong>Single-Station → Seasonal Time Series</strong></p>
     <p>Average Temperature → Annual</p>
     <p>Station Selection: <strong>SEARCH → 97331 → Go → Corvallis State University</strong></p>
+    <p><strong>Options Selection → More Options → add Regression Line</strong></p>
   </div>
   <details class="help"><summary>How do I use the table?</summary><p>Each row is one year. Use xmACIS’s regression result to summarize the overall direction across the record.</p></details>
   <a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Open xmACIS ↗</a>
  </div><div class="observe-card"><span class="stamp">Use the table</span><h2>What does the long-term record suggest?</h2>
- <div class="answers" data-q="temp"><button data-ok="true">Overall temperatures have increased</button><button>Overall temperatures have decreased</button><button>No clear long-term change</button><button>I’m not sure</button></div><div class="feedback" id="temp-feedback"></div>
+ <div class="answers" data-q="temp"><button data-ok="true">Average annual temperatures have increased</button><button>Average annual temperatures have decreased</button><button>No clear long-term change in average annual temperature</button><button>I’m not sure</button></div><div class="feedback" id="temp-feedback"></div>
  </div></div>
 </div></section>
 
 <section class="page" data-page="4"><div class="wrap">
- <div class="mission-heading rain"><div class="flower-line" aria-hidden="true">❀ ─── ✿</div><p class="eyebrow">Corvallis · Question 2</p><h1>Now change the question.</h1><p class="lead short">You know how to create a Seasonal Time Series. Use the same tool to investigate: <strong>Has annual precipitation changed over time in Corvallis?</strong></p></div>
- <div class="research-grid"><div class="recipe">
-  <span class="tape"></span>
-  <p class="hand">Use what you just learned</p>
-  <div class="keep"><strong>Keep:</strong> Corvallis State University · Seasonal Time Series · Annual · long record</div>
-  <p class="change-label">CHANGE THE VARIABLE:</p>
-  <div class="setting-change"><small>Choose</small><strong>Total Precipitation</strong></div>
-  <p class="hint">Choose <strong>Table</strong> again.</p><details class="help"><summary>How do I use the table?</summary><p>Look across many years, not one wet or dry year. Use the regression result to help identify the long-term direction.</p></details>
-  <a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Back to xmACIS ↗</a>
- </div><div class="observe-card"><span class="stamp">Use the table</span><h2>Which description fits best?</h2>
- <div class="answers" data-q="precip"><button>Overall precipitation has increased</button><button>Overall precipitation has decreased</button><button data-ok="true">There is lots of year-to-year variability and the long-term change is less clear</button><button>I’m not sure</button></div><div class="feedback" id="precip-feedback"></div>
- </div></div>
-</div></section>
-
-<section class="page" data-page="5"><div class="wrap">
-<div class="mission-heading frost"><div class="flower-line" aria-hidden="true">🌷 ─── ☀️</div><p class="eyebrow">Corvallis · Question 3</p>
+<div class="mission-heading frost"><div class="flower-line" aria-hidden="true">🌷 ─── ☀️</div><p class="eyebrow">Corvallis · Question 2</p>
 <h1>Does temperature change look the same in every season?</h1>
 <p class="lead short">Compare <strong>spring</strong> and <strong>summer</strong> using the table.</p></div>
 
@@ -170,6 +156,21 @@
 <div class="answers" data-q="seasons"><button>Spring and summer are about the same</button><button data-ok="true">Summer</button><button>Spring</button><button>Neither shows much change</button></div><div class="feedback" id="seasons-feedback"></div></div>
 </div></section>
 
+<section class="page" data-page="5"><div class="wrap">
+ <div class="mission-heading rain"><div class="flower-line" aria-hidden="true">❀ ─── ✿</div><p class="eyebrow">Corvallis · Question 3</p><h1>Now try a different climate variable.</h1><p class="lead short">You know how to create a Seasonal Time Series. Use the same tool to investigate: <strong>Has annual precipitation changed over time in Corvallis?</strong></p></div>
+ <div class="research-grid"><div class="recipe">
+  <span class="tape"></span>
+  <p class="hand">Use what you just learned</p>
+  <div class="keep"><strong>Keep:</strong> Corvallis State University · Seasonal Time Series · Annual · long record</div>
+  <p class="change-label">CHANGE THE VARIABLE:</p>
+  <div class="setting-change"><small>Choose</small><strong>Precipitation</strong></div>
+  <p class="hint">Choose <strong>Table</strong> again.</p><details class="help"><summary>How do I use the table?</summary><p>Look across many years, not one wet or dry year. Use the regression result to help identify the long-term direction.</p></details>
+  <a class="primary linkbtn" href="https://xmacis.rcc-acis.org/" target="_blank" rel="noopener">Back to xmACIS ↗</a>
+ </div><div class="observe-card"><span class="stamp">Use the table</span><h2>Which description fits best?</h2>
+ <div class="answers" data-q="precip"><button>Overall precipitation has increased</button><button>Overall precipitation has decreased</button><button data-ok="true">There is lots of year-to-year variability and the long-term change is less clear</button><button>I’m not sure</button></div><div class="feedback" id="precip-feedback"></div>
+ </div></div>
+</div></section>
+
 <section class="page" data-page="6"><div class="wrap floral">
  <div class="bouquet floral-border" aria-hidden="true">
 <svg viewBox="0 0 500 110">
@@ -184,7 +185,7 @@
   <label class="textlabel">My station or location<input id="station" type="text" placeholder="Station name or nearby community"></label>
   <div class="local-q"><div class="q-icon">🌡️</div><div><h3>Temperature over time</h3><p class="mini-recipe"><b>Average Temperature → Annual → Table</b></p>
    <fieldset><legend>My record shows:</legend><label><input type="radio" name="lt" value="increased"> Overall increase</label><label><input type="radio" name="lt" value="decreased"> Overall decrease</label><label><input type="radio" name="lt" value="unclear"> No clear trend</label><label><input type="radio" name="lt" value="unsure"> I’m not sure</label></fieldset></div></div>
-  <div class="local-q"><div class="q-icon">💧</div><div><h3>Precipitation over time</h3><p class="mini-recipe"><b>Total Precipitation → Annual → Table</b></p>
+  <div class="local-q"><div class="q-icon">💧</div><div><h3>Precipitation over time</h3><p class="mini-recipe"><b>Precipitation → Annual → Table</b></p>
    <fieldset><legend>My record shows:</legend><label><input type="radio" name="lp" value="increased"> Overall increase</label><label><input type="radio" name="lp" value="decreased"> Overall decrease</label><label><input type="radio" name="lp" value="variable"> Mostly variability / no clear trend</label><label><input type="radio" name="lp" value="unsure"> I’m not sure</label></fieldset></div></div>
   <div class="local-q"><div class="q-icon">🌷☀️</div><div><h3>Spring compared with summer</h3><p class="mini-recipe"><b>Average Temperature → Mean → Table</b> · compare Spring with Summer</p><fieldset><legend>At my station:</legend><label><input type="radio" name="lf" value="summer"> Summer shows stronger warming</label><label><input type="radio" name="lf" value="spring"> Spring shows stronger warming</label><label><input type="radio" name="lf" value="similar"> The seasons look similar</label><label><input type="radio" name="lf" value="unclear"> I don’t see a clear pattern</label></fieldset></div></div>
   <label class="textlabel">What change or pattern stood out most?<textarea id="standout" rows="3"></textarea></label>

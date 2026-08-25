@@ -45,3 +45,15 @@ v6 accessibility pathways
 - Table version lives in /table/index.html and follows the same sequence and questions.
 - Explanations for interpreting tables are collapsed in optional <details> controls to keep reading load low.
 - Seasonal table comparison asks learners to compare spring and summer regression results numerically.
+
+v7 review updates
+- New Kaltura video embed (entry_id 1_53ch9qjz), responsive up to 800px wide.
+- Annual temperature wording now explicitly refers to average annual temperature.
+- Temperature reminder now tells learners: Options Selection > More Options > add Regression Line.
+- Regression-line explanation moved to the first annual-temperature example.
+- xmACIS precipitation dropdown wording corrected to "Precipitation."
+- Corvallis order changed to:
+  1. Annual average temperature
+  2. Spring vs summer average temperature
+  3. Annual precipitation
+- Graph and table pathways kept in the same order.
