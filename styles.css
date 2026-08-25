@@ -172,3 +172,48 @@
 .compact-regression{margin:16px 0 0;grid-template-columns:180px 1fr;padding:14px 18px}
 .compact-regression .regression-sketch{padding:5px}
 @media(max-width:760px){.compact-regression{grid-template-columns:1fr}.compact-regression .regression-sketch{max-width:200px}}
+
+/* v9 regression explanation layout */
+.compact-regression{
+  display:block;
+  max-width:700px;
+  margin:18px 0 22px;
+  padding:14px 18px 16px;
+}
+.compact-regression .regression-sketch{
+  width:100%;
+  max-width:520px;
+  margin:0 auto 8px;
+  padding:0;
+  background:transparent;
+}
+.compact-regression .regression-sketch svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.compact-regression .regression-copy{
+  text-align:center;
+}
+.compact-regression .regression-copy .hand{
+  margin:.1rem 0 .3rem;
+}
+.compact-regression .regression-copy p{
+  margin:.25rem 0 .5rem;
+}
+.compact-regression .trend-key{
+  justify-content:center;
+  margin:8px 0 0;
+}
+.regression-xmacis{
+  margin-top:6px;
+}
+@media(max-width:760px){
+  .compact-regression{
+    max-width:none;
+    padding:12px 14px 14px;
+  }
+  .compact-regression .regression-sketch{
+    max-width:420px;
+  }
+}
