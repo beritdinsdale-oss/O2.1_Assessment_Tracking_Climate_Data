@@ -57,3 +57,6 @@ v7 review updates
   2. Spring vs summer average temperature
   3. Annual precipitation
 - Graph and table pathways kept in the same order.
+
+v8
+- Removed the table-based alternative pathway and its link. The graph-based activity is unchanged otherwise.
