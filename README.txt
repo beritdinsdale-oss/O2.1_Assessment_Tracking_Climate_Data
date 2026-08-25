@@ -39,3 +39,9 @@ v4 instructional sequence
 - Precipitation is framed as the first transfer task: use the same Seasonal Time Series method for a new variable.
 - Spring freeze is framed as a new type of climate question requiring a different xmACIS view.
 - Temperature feedback explicitly reinforces weather (year-to-year variation) versus climate (long-term pattern).
+
+v6 accessibility pathways
+- Main graph-based activity has one small link to a parallel table-based version.
+- Table version lives in /table/index.html and follows the same sequence and questions.
+- Explanations for interpreting tables are collapsed in optional <details> controls to keep reading load low.
+- Seasonal table comparison asks learners to compare spring and summer regression results numerically.
